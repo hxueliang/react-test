@@ -14,6 +14,8 @@ class Todo extends Component {
       <div>
         <Input addTitle={this.addTitle.bind(this)} />
         <List data={this.state.list} />
+        <List data={[1, 2, 3]} />
+        <List data={['a', 'b', 'c']} />
       </div>
     )
   }
