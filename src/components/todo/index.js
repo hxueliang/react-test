@@ -43,6 +43,13 @@ class Todo extends Component {
       list: currentList.concat(title) // 'c'
     })
     console.log(this.state.list) // ['A', 'B'] // 因为setState是异步的，所以结果不是 ['A', 'B', 'C'] 
+
+    this.setState({
+      list: currentList.concat(title + 1)
+    })
+    this.setState({
+      list: currentList.concat(title + 2)
+    })
   }
 }
 
