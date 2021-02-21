@@ -6,7 +6,7 @@ class Todo extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      list: []
+      list: ['A', 'B']
     }
   }
   render() {
@@ -37,10 +37,12 @@ class Todo extends Component {
   }
   addTitle(title) {
     const currentList = this.state.list
+    console.log(this.state.list) // ['A', 'B']
     // patch(vndoe, newVnode)
     this.setState({
-      list: currentList.concat(title)
+      list: currentList.concat(title) // 'c'
     })
+    console.log(this.state.list) // ['A', 'B'] // 因为setState是异步的，所以结果不是 ['A', 'B', 'C'] 
   }
 }
 
