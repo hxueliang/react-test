@@ -17,6 +17,22 @@ class Todo extends Component {
         <List data={[1, 2, 3]} />
         <List data={['a', 'b', 'c']} />
       </div>
+      /**
+       *  =>
+       * React.createElement(
+       *  "div",
+       *  null,
+       *  React.createElement(Input, { addTitle: this.addTitle.bind(this) }),
+       *  React.createElement(List, { data: this.state.list }),
+       *  React.createElement(List, { data: [1, 2, 3] }),
+       *  React.createElement(List, { data: ['a', 'b', 'c'] })
+       * )
+       * 
+       * React.createElement(List, { data: this.state.list })
+       *  =>
+       * var list = new List({ data: this.state.list })
+       * var vnode = list.render()
+       */
     )
   }
   addTitle(title) {

@@ -14,6 +14,20 @@ class List extends Component {
           })
         }
       </ul>
+      /**
+       *  =>
+       * React.createElement(
+       *  "ul",
+       *  null,
+       *  list.map((item, index) => {
+       *    return React.createElement(
+       *      "li",
+       *      { key: index },
+       *      item
+       *    );
+       *  })
+       * )
+       */
     )
   }
 }
